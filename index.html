@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="format-detection" content="telephone=no">
+            <meta name="msapplication-tap-highlight" content="no">
+            <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <title></title>
+
+    <link rel="manifest" href="manifest.json">
+
+    <!-- un-comment this code to enable service worker
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log('service worker installed'))
+          .catch(err => console.log('Error', err));
+      }
+    </script>-->
+
+    <link href="lib/ionic/css/ionic.min.css" rel="stylesheet">
+
+    
+    <style type="text/css">
+      .ui-loader {
+        display: none !important;
+      }
+
+    </style>
+
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/geturi.js"></script>
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-route.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.js"></script>
+    <script src="lib/ionic/js/ionic.js"></script>
+
+    <script src="js/ng-cordova.min.js"></script>
+
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+      $.mobile.loadingMessage = false;
+      $.mobile.loading().hide();
+      $.mobile.loading( 'show', { theme: "b", text: "", textonly: false});
+    </script>
+
+  </head>
+  <body class="platform-android platform-cordova platform-webview">
+
+     <ion-pane>
+      
+      <ion-content style="text-align: center" >
+         <ion-list>
+         <ion-item>
+            <div align="center">
+              <img src="img/logo.png" style="max-height: auto; max-width: 63%; padding: 1em;" align="center">
+            </div>
+         </ion-item>
+         <ion-item>
+          <div style="padding:1em;">
+              <a class="button button-block button-positive" type= "submit"  id="scan" target="_blank" href="javascript:scan();">
+                  Scan
+              </a>
+            </div>
+          </ion-item>
+          
+          
+          <ion-item>
+            <div class="item item-input item-stacked-label" style="padding-left: 1em; padding-right: 1em; align-content: center; height: 150px">
+           <input type="number" class="ionic-label" id="txidin" disabled="disabled" placeholder="TXID"  style="text-align: center;"></input>
+            
+          <!--
+          <button class="button button-block button-positive" type = "submit" onclick="javascript:check();" id="checker">Check</button>
+          -->
+          <textarea id="txtHint" cols="40" rows="7" style="text-align: center; display: inline-block; overflow: hidden;resize: none; padding-bottom: 6em; text-transform: uppercase;" contenteditable="false" disabled="disabled"></textarea>  
+          </div>
+          </ion-item>
+          <ion-item>
+            <div style="padding-left: 1em; padding-right: 1em;">
+            <button class="button button-block button-positive" type = "submit" onclick="javascript:confirm();" id="confirmer"  disabled="disabled">Confirm</button>
+            </div>
+            <div class="item item-input item-stacked-label" style="padding-right: 1em;">
+            <textarea id="txtHint2" disabled="disabled" placeholder="Status?" style="text-align: center; resize: none;"></textarea>
+            </div>
+          </ion-item>
+          </ion-list>
+      </ion-content>
+    </ion-pane>
+   <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+   <script type="text/javascript" src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.js">     
+  </body>
+</html>
